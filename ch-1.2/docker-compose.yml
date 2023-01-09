@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+
+  keycloak:
+    image: jboss/keycloak
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    ports:
+      - 18080:8080
+    networks:
+      - auth
+
+
+networks:
+  auth:
+    driver: bridge
